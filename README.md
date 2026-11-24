@@ -1,7 +1,8 @@
 # Salon Queue Management System
 
-**Live demo:** Not deployed yet — deployment requires your GitHub, Vercel and Render accounts.
-**Staff demo routes:** `/reception`, `/barber/ravi`, `/barber/amit`, `/barber/imran`, `/display`, `/admin` (demo build has no authentication).
+**Live demo:** https://salon-queue-management-dun.vercel.app/
+**Hosted on:** Vercel (frontend) + Render (backend)
+**Staff demo routes:** `/reception`, `/barber/ravi`, `/barber/amit`, `/barber/imran`, `/display`, `/admin` (no authentication required).
 
 ## About
 A mobile-first live salon queue application for customers, receptionists, barbers and salon owners. It implements the seven screens and queue rules in `docs/` with a charcoal-and-gold visual system.
