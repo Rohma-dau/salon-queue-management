@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {validPhone,transition,nextEligible,estimateWait} from './queue.js';
+test('phone validation accepts exactly ten digits',()=>{assert.equal(validPhone('9876543210'),true);assert.equal(validPhone('123'),false);assert.equal(validPhone('98765abc10'),false)});
+test('queue transitions only move forward',()=>{assert.equal(transition('Waiting','Called'),true);assert.equal(transition('Waiting','Done'),false);assert.equal(transition('Called','No-show'),true);assert.equal(transition('Done','Waiting'),false)});
+test('call next skips customers committed to another barber',()=>{const q=[{status:'Waiting',barber_id:'ravi',created_at:'2025-01-01'},{status:'Waiting',barber_id:null,created_at:'2025-01-02'}];assert.equal(nextEligible(q,'amit').created_at,'2025-01-02')});
+test('wait estimate sums eligible service time and divides by staff',()=>{const q=[{status:'Waiting',barber_id:null,created_at:'2025-01-01',minutes:30},{status:'Waiting',barber_id:null,created_at:'2025-01-02',minutes:15}];assert.equal(estimateWait(q,q[1],1),30)});

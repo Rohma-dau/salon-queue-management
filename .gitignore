@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+server/*.sqlite
+server/*.sqlite-shm
+server/*.sqlite-wal
+.DS_Store
+
+# Ignore local database files everywhere
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
